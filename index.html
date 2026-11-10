@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El Reloj del Juicio Final</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/dayjs@1.11.13/dayjs.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/dayjs@1.11.13/locale/es.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/dayjs@1.11.13/plugin/customParseFormat.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/dayjs@1.11.13/plugin/duration.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/dayjs@1.11.13/plugin/utc.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/dayjs@1.11.13/plugin/timezone.js"></script>
+  <script defer src="js/script.js"></script>
+</head>
+
+<body>
+  <main>
+    <header>
+      <h1>El Reloj del Juicio Final</h1>
+      <p>Tu edad en cifras, una cuenta atrás y la hora en otras ciudades.</p>
+    </header>
+    <!-- Punto 1 -->
+    <section aria-labelledby="titulo-edad">
+      <h2 id="titulo-edad">1. Edad en cosas raras</h2>
+      <form id="form-edad" novalidate>
+        <label for="nacimiento">Fecha de nacimiento</label>
+        <input id="nacimiento" type="date" required aria-describedby="ayuda-edad error-edad">
+        <p id="ayuda-edad" class="ayuda">Contamos desde las 00:00 de ese día, en tu zona local. Un día de duración
+          equivale a 24 horas.</p>
+        <button type="submit">Calcular</button>
+        <p id="error-edad" role="alert"></p>
+      </form>
+      <div id="resultado-edad" hidden aria-live="polite">
+        <dl>
+          <div>
+            <dt>Días completos</dt>
+            <dd id="dias-edad"></dd>
+          </div>
+          <div>
+            <dt>Horas completas</dt>
+            <dd id="horas-edad"></dd>
+          </div>
+          <div>
+            <dt>Segundos completos</dt>
+            <dd id="segundos-edad"></dd>
+          </div>
+        </dl>
+        <p>Naciste un <strong id="dia-semana"></strong>.</p>
+        <p>Has vivido <strong id="viernes"></strong> viernes 13.</p>
+        <p id="instante-calculo" class="ayuda"></p>
+      </div>
+    </section>
+    <!-- Punto 2 -->
+    <section aria-labelledby="titulo-evento">
+      <h2 id="titulo-evento">2. Cuenta atrás para que la IA acabe con la humanidad</h2>
+      <p id="fecha-evento" class="ayuda"></p>
+      <p id="contador" role="timer"></p>
+      <p id="estado-evento" role="status"></p>
+    </section>
+    <!-- Punto 3 -->
+    <section aria-labelledby="titulo-zonas">
+      <h2 id="titulo-zonas">3. Zonas horarias</h2>
+      <dl class="zonas">
+        <div>
+          <dt>Tu hora local</dt>
+          <dd id="hora-local"></dd>
+        </div>
+        <div>
+          <dt>Tokio</dt>
+          <dd id="hora-tokio"></dd>
+        </div>
+        <div>
+          <dt>Nueva York</dt>
+          <dd id="hora-nueva-york"></dd>
+        </div>
+        <div>
+          <dt>Sídney</dt>
+          <dd id="hora-sidney"></dd>
+        </div>
+      </dl>
+    </section>
+  </main>
+</body>
+
+</html>
